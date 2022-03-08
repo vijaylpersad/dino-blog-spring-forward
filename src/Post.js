@@ -3,8 +3,8 @@ import Comment from './Comment'
 
 class Post extends Component {
     render() {
-        const commentParagraphs = this.props.comments.map(burrito=>{
-            return <Comment content={burrito}/>
+        const commentParagraphs = this.props.comments.map((burrito, index)=>{
+            return <Comment key={`Commment-${index}`} content={burrito} />
         })
         return(
             <article>
@@ -14,9 +14,9 @@ class Post extends Component {
                 <hr></hr>
                 <h3>Comments:</h3>
                 {commentParagraphs}
-                <Comment content={this.props.comments[0]} />
+                {/* <Comment content={this.props.comments[0]} />
                 <Comment content={this.props.comments[1]} />
-                <Comment content={this.props.comments[2]} />
+                <Comment content={this.props.comments[2]} /> */}
             </article>
         )
     }
